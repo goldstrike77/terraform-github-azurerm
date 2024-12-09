@@ -1,10 +1,4 @@
 terraform {
-  cloud {
-    organization = "goldstrike77"
-    workspaces {
-      name = "terraform-github-azurerm"
-    }
-  }
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
@@ -15,6 +9,13 @@ terraform {
       version = "2.53.1"
     }
   }
+}
+
+provider "azurerm" {
+  version         = ">= 2.0.0"
+  environment     = "china" 
+  subscription_id = "cd98536e-294a-49ed-b1f0-233d4231cf3d"
+  features {}
 }
 
 provider "azurerm" {
