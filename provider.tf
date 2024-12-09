@@ -12,13 +12,6 @@ terraform {
 }
 
 provider "azurerm" {
-  version         = ">= 2.0.0"
-  environment     = "china" 
-  subscription_id = "cd98536e-294a-49ed-b1f0-233d4231cf3d"
-  features {}
-}
-
-provider "azurerm" {
   features {}
   environment     = "public"
   subscription_id = "b971283c-e0b7-46a4-9496-9cbfb850ebe5"
