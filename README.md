@@ -1,4 +1,4 @@
-# 演示在Azure环境中创建AKS集群。
+# 演示在Azure环境中创建Kubernetes Service。
 
 ```
 deploy time: 00:07:44
