@@ -10,6 +10,7 @@ env:
  TF_LOG: INFO
  ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
  ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+ GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   
 jobs:
  terraform:
@@ -21,11 +22,8 @@ jobs:
        working-directory: .
 
    steps:
-     - name: Add SSH key
-       run: |
-         mkdir -p $HOME/.ssh
-         echo "${{ secrets.SSH_KEY }}" > $HOME/.ssh/id_rsa
-         chmod 600 $HOME/.ssh/id_rsa
+     - name: Add Git user
+       run: git config credential.https://github.com.username ${{ secrets.GIT_USERNAME }}
 
      - name: Checkout the repository to the runner
        uses: actions/checkout@v2
