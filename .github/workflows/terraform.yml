@@ -23,7 +23,7 @@ jobs:
 
    steps:
      - name: Add Git user
-       run: git config credential.https://github.com.username ${{ secrets.GIT_USERNAME }}
+       run: git config --global credential.https://github.com.username ${{ secrets.GIT_USERNAME }}
 
      - name: Checkout the repository to the runner
        uses: actions/checkout@v2
