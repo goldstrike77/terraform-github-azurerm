@@ -83,9 +83,9 @@ variable "azurerm_resources" {
             auto_scaling = true
             host_encryption = false
             ultra_ssd = false
-            node_count = "1"
+            node_count = "0"
             max_count = "2"
-            min_count = "1"
+            min_count = "0"
             max_surge = "50%"
             max_pods = "30"
             labels = {}         

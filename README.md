@@ -1,4 +1,4 @@
-# 演示在Azure环境中创建Kubernetes Service。
+# 演示在Azure环境中创建和维护Kubernetes Service。
 
 ```
 deploy time: 00:07:44
