@@ -10,7 +10,6 @@ env:
  TF_LOG: INFO
  ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
  ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
- GH_PAT: ${{ secrets.GH_PAT }}
   
 jobs:
  terraform:
@@ -24,9 +23,8 @@ jobs:
    steps:
      - name: Add Git credential
        run: |
-         git config --global credential.https://github.com.username ${{ secrets.GIT_USER }}
-         git config --global user.password ${{ secrets.GIT_PASS }}
-         git config --global credential.helper store
+         git config --global url."https://git:${{ GITHUB_TOKEN }}@github.com/goldstrike77".insteadOf "https://github.com/goldstrike77"
+         git config --global url."https://${{ GITHUB_TOKEN }}:x-oauth-basic@github.com/goldstrike77".insteadOf ssh://git@github.com/goldstrike77
 
      - name: Checkout the repository to the runner
        uses: actions/checkout@v2
