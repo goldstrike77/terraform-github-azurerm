@@ -16,12 +16,17 @@ jobs:
    name: "Terraform Infrastructure Change Management"
    runs-on: ubuntu-latest
    defaults:
-     run: |
-       mkdir -p $HOME/.ssh
-       echo "${{ secrets.SSH_KEY }}" > $HOME/.ssh/id_rsa
-       chmod 600 $HOME/.ssh/id_rsa
+     run:
+       shell: bash
+       working-directory: .
 
    steps:
+     - name: Add SSH key
+       run: |
+         mkdir -p $HOME/.ssh
+         echo "${{ secrets.SSH_KEY }}" > $HOME/.ssh/id_rsa
+         chmod 600 $HOME/.ssh/id_rsa
+
      - name: Checkout the repository to the runner
        uses: actions/checkout@v2
 
