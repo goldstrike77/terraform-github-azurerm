@@ -23,8 +23,8 @@ jobs:
    steps:
      - name: Add Git credential
        run: |
-         git config --global url."https://git:${{ GIT_PASS }}@github.com/goldstrike77".insteadOf "https://github.com/goldstrike77"
-         git config --global url."https://${{ GIT_PASS }}:x-oauth-basic@github.com/goldstrike77".insteadOf ssh://git@github.com/goldstrike77
+         git config --global url."https://git:${{ secrets.GIT_PASS }}@github.com/goldstrike77".insteadOf "https://github.com/goldstrike77"
+         git config --global url."https://${{ secrets.GIT_PASS }}:x-oauth-basic@github.com/goldstrike77".insteadOf ssh://git@github.com/goldstrike77
 
      - name: Checkout the repository to the runner
        uses: actions/checkout@v2
