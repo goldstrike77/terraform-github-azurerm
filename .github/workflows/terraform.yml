@@ -10,7 +10,7 @@ env:
  TF_LOG: INFO
  ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
  ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
- GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+ GITHUB_TOKEN: ${{ secrets.GITHUB_SSH_KEY }}
  
 jobs:
  terraform:
